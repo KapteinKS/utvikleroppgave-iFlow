@@ -2,6 +2,7 @@ $(function (){ // Ready function
     getHours();
 });
 
+//TODO Make repository and Controller files
 function getHours(){
     $.get("/getHours", function(hours){
         formatHours(hours);
