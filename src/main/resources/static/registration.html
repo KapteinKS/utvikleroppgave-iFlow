@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <script src="registration.js"></script>
+    <script src="validation.js"></script>
+    <meta charset="UTF-8">
+    <title>Registration</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <h2>Hours this week</h2>
+                <div id="hours" class="table-responsive"/>
+            </div>
+            <div class="col-md-4">
+                <h2>Hour registration</h2>
+                <form class="form">
+                    <div class="form-group">
+                        <label for="project">Project code</label>
+                        <input type="text" class="form-control" id="project" onchange="validateProject()"/>
+                        <span id="invalidProjectName" style="color: red"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="numberHours">Hours to register</label>
+                        <input type="number" class="form-control" id="numberHours" onchange="validateHours()"/>
+                        <span id="floats" style="color: red"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="comment">Comments</label>
+                        <input type="text" class="form-control" id="comment">
+                    </div>
+                </form>
+                <button class="btn btn-primary" onclick="save()">Save</button>
+                <div id="err" style="color: red"></div>
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>

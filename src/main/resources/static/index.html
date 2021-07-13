@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <script src="index.js"></script>
+    <script src="validation.js"></script>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+<div class="container">
+    <div class="col-md-4">
+        <h1>Login</h1>
+        <form class="form" data-form-type="login">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" class="form-control" id="username" onchange="validateUsername()"/>
+                <span id="wrongUsername" style="color: red"/>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" id="password" onchange="validatePwd()"/>
+                <span id="wrongPass" style="color: red"/>
+            </div>
+        </form>
+
+        <button class="btn btn-primary" onclick="login()">Login</button>
+        <div id="err" style="color: red"></div>
+
+    </div>
+</div>
+</body>
+</html>
