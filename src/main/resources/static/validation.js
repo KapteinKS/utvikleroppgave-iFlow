@@ -1,7 +1,7 @@
 // Login --------------------------------------------------------------------------------
 function validateUsername() {
     const username = $("#username").val();
-    const regexp = /^[a-zA-Z. \-]{2-20}$/;
+    const regexp = /^[a-zA-Z. \-]{2,20}$/;
     const ok = regexp.test(username)
     if (!ok){
         $("#wrongUsername").html("Username must consist of 2-20 characters");
@@ -14,7 +14,7 @@ function validateUsername() {
 
 function validatePwd(){
     const password = $("#password").val();
-    const regexp = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+    const regexp = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,40}$/;
     const ok = regexp.test(password);
     if (!ok){
         $("#wrongPass").html("Password must include at least 8 characters, " +

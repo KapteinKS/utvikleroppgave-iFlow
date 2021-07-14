@@ -1,6 +1,7 @@
 function login() {
     if (loginValidationOK()){
-        const url = "/login?username="+$("username").val()+"&password="+$("password").val();
+        const url = "/login?username="+$("#username").val()+"&password="+$("#password").val();
+
         $.get( url, function( OK) {
             if(OK){
                 window.location.href="registration.html";

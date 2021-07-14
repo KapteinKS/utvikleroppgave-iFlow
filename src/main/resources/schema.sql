@@ -1,0 +1,18 @@
+CREATE TABLE Hour
+(
+    id INTEGER AUTO_INCREMENT NOT NULL,
+    project VARCHAR(10) NOT NULL,
+    date DATE (12) NOT NULL,
+    hours INTEGER (99) NOT NULL,
+    comment VARCHAR(255),
+    PRIMARY KEY (id)
+);
+
+CREATE TABLE User
+(
+    id INTEGER AUTO_INCREMENT NOT NULL,
+    username VARCHAR(20) NOT NULL,
+    password VARCHAR(40) NOT NULL,
+    PRIMARY KEY (id)
+);
+

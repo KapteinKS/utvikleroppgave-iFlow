@@ -2,7 +2,6 @@ $(function (){ // Ready function
     getHours();
 });
 
-//TODO Make repository and Controller files
 function getHours(){
     $.get("/getHours", function(hours){
         formatHours(hours);
@@ -25,12 +24,15 @@ function formatHours(hours){  // Create a table of all registered hours
     $("#hours").html(out);
     if (total > 100){ // Warning only given when hours strictly exceed 100
         $("#overworked").html("Total hours exceed 100!")
+    } else {
+        $("#overworked").html("");
     }
 }
 
 function deleteHours(hour){
-    const url = "/deleteHours?hours?"+hour;
-    $.get(url, function (){
+    const url = "/deleteHours?hours="+hour;
+    //TODO create this method in controller + repo
+    $.delete(url, function (){
         window.location.href = "registration.html";
     });
 }
