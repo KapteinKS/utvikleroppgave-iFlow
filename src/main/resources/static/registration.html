@@ -26,6 +26,12 @@
                     </div>
 
                     <div class="form-group">
+                        <label for="project">Date</label>
+                        <input type="date" class="form-control" id="date" onchange="validateDate()"/>
+                        <span id="invalidDate" style="color: red"></span>
+                    </div>
+
+                    <div class="form-group">
                         <label for="numberHours">Hours to register</label>
                         <input type="number" class="form-control" id="numberHours" onchange="validateHours()"/>
                         <span id="floats" style="color: red"></span>

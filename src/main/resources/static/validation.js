@@ -45,19 +45,32 @@ function validateProject(){
     }
 }
 
+function validateDate(){
+    const date = $("#date").val();
+    const regexp = /^[0-3][0-9].[0-1][0-9].2[0-9]{3}$/;
+    const ok = regexp.test(date);
+    if (!ok){
+        $("#invalidDate").html("Invalid date format entered");
+        return false;
+    } else {
+        $("#invalidDate").html("");
+        return false;
+    }
+}
+
 function validateHours(){
     const hours = $("#numberHours").val();
     const regexp = /^[1-9]{1,2}$/;
     const ok = regexp.test(hours);
     if (!ok) {
-        $("#floats").html("Please write a whole number, 1-99")
+        $("#floats").html("Please write a whole number, 1-99");
         return false;
     } else {
-        $("#floats").html("")
+        $("#floats").html("");
         return true;
     }
 }
 
 function registrationOK() {
-    return (validateProject() && validateHours());
+    return (validateProject() && validateHours() && validateDate());
 }
