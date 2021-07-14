@@ -60,7 +60,7 @@ function validateDate(){
 
 function validateHours(){
     const hours = $("#numberHours").val();
-    const regexp = /^[1-9]{1,2}$/;
+    const regexp = /^[1-9][0-9]$/;
     const ok = regexp.test(hours);
     if (!ok) {
         $("#floats").html("Please write a whole number, 1-99");

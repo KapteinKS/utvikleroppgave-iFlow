@@ -16,7 +16,8 @@ function formatHours(hours){  // Create a table of all registered hours
     let total = 0;
     let out = "<table class='table table-striped'><tr><th>Project</th><th>Date</th><th>Hours</th><th>Comment</th><td></td></tr>";
     for (const hour of hours){
-        total += hour.hours;
+        let newTotal = total + parseInt(hour.hours, 10);
+        total = newTotal;
         out += "<tr><td>" + hour.project + "</td><td>" + hour.date + "</td><td>" + hour.hours + "</td><td>" + hour.comment + "</td><td>" +
             "<button class='btn btn-danger' onclick='deleteHours("+ hour.id + ")'>Delete</button></td></tr>";
     }
