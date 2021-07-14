@@ -30,10 +30,9 @@ function formatHours(hours){  // Create a table of all registered hours
 }
 
 function deleteHours(id){
-    console.log("trying to delete")
     const url = "/delete?id="+id;
     $.get(url, function (){
-        window.location.href = "registration.html";
+        window.location.href = "/registration.html";
     });
 }
 
@@ -50,6 +49,6 @@ function save(){
             getHours();
         });
 
-        window.location.href = "registration.html";
+        window.location.href = "/registration.html";
     }
 }

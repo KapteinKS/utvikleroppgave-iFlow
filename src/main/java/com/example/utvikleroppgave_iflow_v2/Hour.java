@@ -19,16 +19,20 @@ public class Hour {
         this.comment = comment;
     }
 
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getId() {
+        return id;
+    }
+
     public String getDate() {
         return date;
     }
 
     public void setDate(String date) {
         this.date = date;
-    }
-
-    public int getId() {
-        return id;
     }
 
     public String getProject() {
