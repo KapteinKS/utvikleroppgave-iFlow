@@ -1,8 +1,8 @@
-CREATE TABLE Hour
+CREATE TABLE RegisteredHour
 (
     id INTEGER AUTO_INCREMENT NOT NULL,
     project VARCHAR(10) NOT NULL,
-    date DATE (12) NOT NULL,
+    date VARCHAR (12) NOT NULL,
     hours INTEGER (99) NOT NULL,
     comment VARCHAR(255),
     PRIMARY KEY (id)

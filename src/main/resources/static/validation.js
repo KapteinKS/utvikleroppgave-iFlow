@@ -47,14 +47,14 @@ function validateProject(){
 
 function validateDate(){
     const date = $("#date").val();
-    const regexp = /^[0-3][0-9].[0-1][0-9].2[0-9]{3}$/;
+    const regexp = /^[0-3][0-9]\.[0-1][0-9]\.[2][0-9]{3}$/;
     const ok = regexp.test(date);
     if (!ok){
         $("#invalidDate").html("Invalid date format entered");
         return false;
     } else {
         $("#invalidDate").html("");
-        return false;
+        return true;
     }
 }
 
@@ -72,5 +72,5 @@ function validateHours(){
 }
 
 function registrationOK() {
-    return (validateProject() && validateHours() && validateDate());
+    return ( validateProject() && validateHours() && validateDate() );
 }

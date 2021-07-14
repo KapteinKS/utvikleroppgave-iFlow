@@ -54,9 +54,9 @@ public class RegistrationController {
         }
     }
 
-    @DeleteMapping("/delete")
-    public void delete(Hour hour, HttpServletResponse response) throws IOException{
-        if (!rep.delete(hour)){
+    @GetMapping("/delete")
+    public void delete(int id, HttpServletResponse response) throws IOException{
+        if (!rep.delete(id)){
             response.sendError(HttpStatus.INTERNAL_SERVER_ERROR.value(), "Something went wrong, could not delete");
         }
     }

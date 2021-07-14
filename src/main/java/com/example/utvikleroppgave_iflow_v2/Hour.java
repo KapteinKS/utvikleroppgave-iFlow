@@ -1,8 +1,11 @@
 package com.example.utvikleroppgave_iflow_v2;
 
+import java.util.Date;
+
 public class Hour {
     private int id;
     private String project;
+    private String date;
     private int hours;
     private String comment;
 
@@ -14,6 +17,14 @@ public class Hour {
         this.project = project;
         this.hours = hours;
         this.comment = comment;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
     }
 
     public int getId() {

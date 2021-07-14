@@ -3,6 +3,7 @@ package com.example.utvikleroppgave_iflow_v2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.SqlOutParameter;
 import org.springframework.stereotype.Repository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -18,7 +19,7 @@ public class RegistrationRepository {
     private Logger logger = LoggerFactory.getLogger(RegistrationRepository.class);
 
     public List<Hour> getHours() {
-        String sql = "SELECT * FROM Hours";
+        String sql = "SELECT * FROM RegisteredHour";
         try {
             return db.query(sql, new BeanPropertyRowMapper(Hour.class));
         }
@@ -45,10 +46,27 @@ public class RegistrationRepository {
     }
 
     public boolean save(Hour hour) {
-        return false;
+        String sql = "INSERT INTO RegisteredHour (project, date, hours, comment) VALUES (?,?,?,?)";
+        try {
+            db.update(sql, hour.getProject(), hour.getDate(), hour.getHours(), hour.getComment());
+            return true;
+        }
+        catch (Exception e){
+            System.out.println("Did not save");
+            logger.error("Error in saving hours" + e);
+            return false;
+        }
     }
 
-    public boolean delete(Hour hour) {
-        return false;
+    public boolean delete(int id) {
+        String sql = "DELETE FROM RegisteredHour WHERE id=?";
+        try {
+            db.update(sql, id);
+            return true;
+        }
+        catch (Exception e){
+            logger.error("Error when deleting hour" + e);
+            return false;
+        }
     }
 }
